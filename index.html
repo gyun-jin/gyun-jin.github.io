@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="데이터 분석과 AI를 실제 서비스로 연결하는 개발자 박윤진의 포트폴리오"
+    />
+    <meta name="theme-color" content="#f4f7fa" />
+    <title>박윤진 | Data · AI Developer</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css?v=7" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-photo-frame">
+          <img
+            class="brand-photo"
+            src="assets/images/profile.jpeg"
+            alt="Profile photo of Park YoonJin"
+            width="1496"
+            height="1877"
+          />
+        </span>
+        <span class="brand-copy">
+          <strong>Park YoonJin</strong>
+          <small>Data · AI Developer</small>
+        </span>
+      </a>
+
+      <nav class="side-nav" aria-label="On-page navigation">
+        <a class="is-active" href="#home"><span>01</span> Intro</a>
+        <a href="#projects"><span>02</span> Projects</a>
+        <a href="#capabilities"><span>03</span> Skills</a>
+        <a href="#journey"><span>04</span> Experience</a>
+        <a href="#contact"><span>05</span> Contact</a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Data · AI · Engineering</span>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section class="hero section" id="home" aria-labelledby="hero-title">
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> DATA ANALYSIS · AI DEVELOPMENT</p>
+          <h1 id="hero-title">
+            데이터 분석부터 <em>AI 기능과 서비스 구현</em>까지
+            <span class="hero-connection">직접 연결</span>합니다.
+          </h1>
+          <p class="hero-description">
+            데이터를 근거로 문제를 정의하고 분석·모델링한 결과를
+            실제로 사용할 수 있는 API와 모바일·웹 서비스로 구현합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">
+              View Projects <span aria-hidden="true">↘</span>
+            </a>
+            <a
+              class="button button-ghost"
+              href="https://github.com/gyun-jin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> PROJECTS</p>
+          <div>
+            <h2 id="projects-title">Selected Projects</h2>
+            <p>
+              데이터 분석, AI 모델링, 백엔드와 모바일 구현을 넘나들며
+              문제 해결의 전체 사이클을 경험하고 있습니다.
+            </p>
+            <div class="project-values" aria-label="프로젝트 원칙">
+              <span>#근거있는선택</span>
+              <span>#재현가능한실험</span>
+              <span>#끝까지구현</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card project-lg reveal">
+            <div class="project-card-top">
+              <span class="project-number">01</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="mini-art art-baseball" role="img" aria-label="시간 순서 분할, CatBoost와 TabM 앙상블, Platt 확률 보정으로 이어지는 투구 제구 성공확률 모델링 과정">
+              <div class="chart-grid"></div>
+              <div class="model-pipeline">
+                <div class="pipeline-step">
+                  <small>01 · SPLIT</small>
+                  <strong>Chronological</strong>
+                  <span>과거 시즌 → 미래 시즌</span>
+                </div>
+                <b aria-hidden="true">↓</b>
+                <div class="pipeline-step pipeline-step-accent">
+                  <small>02 · ENSEMBLE</small>
+                  <strong>CatBoost + TabM</strong>
+                  <span>시즌 일반화 우선</span>
+                </div>
+                <b aria-hidden="true">↓</b>
+                <div class="pipeline-step">
+                  <small>03 · CALIBRATE</small>
+                  <strong>Platt Scaling</strong>
+                  <span>확률 품질 보정</span>
+                </div>
+                <b aria-hidden="true">↓</b>
+                <div class="pipeline-output">
+                  <small>OUTPUT</small>
+                  <strong>제구 성공확률</strong>
+                  <span>calibrated probability · 0—1</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-meta"><span>DATA SCIENCE</span><span>DATATHON</span><span>5인 팀</span></div>
+              <h3>LG Aimers 9기</h3>
+              <p class="card-subtitle">투구 제구 성공확률 예측</p>
+              <p>과거 시즌 데이터에서 미래 투구의 제구 성공확률을 예측한 데이터톤 프로젝트입니다.</p>
+              <ul class="compact-list">
+                <li><strong>역할</strong> 야구 도메인 분석을 바탕으로 중요 피처 개발, CatBoost·TabM 성능 비교와 앙상블 모델 선택</li>
+                <li><strong>핵심 구현</strong> 시즌 기준 시간 분할로 데이터 누수 방지, TabM 가중치 0.05 적용, Platt calibration으로 확률 품질 보정</li>
+                <li><strong>결과</strong> 391위 / 1,090명 · 리더보드 1029.04299점</li>
+              </ul>
+              <div class="tags" aria-label="Technologies used">
+                <span>Python</span><span>CatBoost</span><span>TabM</span><span>Feature Engineering</span>
+              </div>
+              <a class="text-link" href="https://github.com/gyun-jin/LG-Aimers-9th" target="_blank" rel="noreferrer">View model card <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card project-ocular reveal" id="digiocular">
+            <div class="project-card-top">
+              <span class="project-number">02</span>
+              <span class="project-year">2025—2026</span>
+            </div>
+            <div class="mini-art ocular-art" role="img" aria-label="두 눈의 기준 중심과 편위된 동공 위치를 비교하는 눈 정렬 분석 도식">
+              <svg viewBox="0 0 520 280" role="img" aria-label="기준 눈과 편위 눈의 동공 위치를 비교하는 도식">
+                <line class="alignment-line" x1="34" y1="130" x2="486" y2="130" />
+
+                <g class="eye eye-reference">
+                  <path class="eye-lid" d="M42 130 Q145 48 248 130 Q145 212 42 130 Z" />
+                  <circle class="iris" cx="145" cy="130" r="42" />
+                  <circle class="pupil" cx="145" cy="130" r="17" />
+                  <path class="eye-target" d="M145 75 V185 M90 130 H200" />
+                  <text class="eye-label" x="145" y="232" text-anchor="middle">REFERENCE</text>
+                </g>
+
+                <g class="eye eye-deviation">
+                  <path class="eye-lid" d="M272 130 Q375 48 478 130 Q375 212 272 130 Z" />
+                  <circle class="iris iris-deviation" cx="396" cy="130" r="42" />
+                  <circle class="pupil" cx="396" cy="130" r="17" />
+                  <path class="eye-target" d="M375 75 V185 M320 130 H430" />
+                  <line class="deviation-vector" x1="375" y1="82" x2="396" y2="82" />
+                  <path class="deviation-arrow" d="M396 82 L386 76 M396 82 L386 88" />
+                  <text class="deviation-label" x="385" y="68" text-anchor="middle">ΔX</text>
+                  <text class="eye-label" x="375" y="232" text-anchor="middle">DEVIATION</text>
+                </g>
+              </svg>
+              <div class="visual-caption"><span>BINOCULAR ALIGNMENT</span><strong>기준 중심 · 편위 비교</strong></div>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-meta"><span>COMPUTER VISION</span><span>RESEARCH</span><span>팀장</span></div>
+              <h3>DigiOcular</h3>
+              <p class="card-subtitle">사시·사위 판별 및 Vision Therapy 시스템</p>
+              <p>
+                카메라 영상의 눈 정렬 상태를 분석하고 검사·훈련 결과를 기록하는 서비스를 개발했습니다.
+              </p>
+              <ul class="compact-list">
+                <li><strong>역할</strong> 전체 개발 계획 수립과 일정 조율, 사시·사위 판별 로직 설계, Flutter 검사·훈련 화면 개발</li>
+                <li><strong>핵심 구현</strong> Mediapipe 얼굴·눈 랜드마크를 이용한 눈 정렬 상태 분석과 Vision Therapy 기능 연동</li>
+                <li><strong>결과</strong> 논문 제1저자 · 한국게임학회 학술대회 발표</li>
+              </ul>
+              <div class="tags" aria-label="Technologies used">
+                <span>Mediapipe</span><span>Flutter</span><span>Dart</span><span>Firebase</span>
+              </div>
+              <a class="text-link" href="https://github.com/gyun-jin/DigiOcular" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card project-ai reveal" data-delay="1">
+            <div class="project-card-top">
+              <span class="project-number">03</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="mini-art ai-architecture" role="img" aria-label="채팅과 이미지를 ChatClient로 처리해 SSE, 대화 메모리, 비전 결과로 연결하는 Spring AI 애플리케이션 구조">
+              <div class="architecture-inputs"><span>CHAT</span><span>IMAGE</span></div>
+              <b aria-hidden="true">↓</b>
+              <div class="architecture-core"><strong>Spring AI</strong><small>ChatClient</small></div>
+              <b aria-hidden="true">↓</b>
+              <div class="architecture-outputs"><span>SSE</span><span>MEMORY</span><span>VISION</span></div>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-meta"><span>GENERATIVE AI</span><span>BACKEND</span></div>
+              <h3>Spring AI Chat &amp; Vision</h3>
+              <p class="card-subtitle">대화형 AI와 이미지 분석 웹 애플리케이션</p>
+              <p>
+                텍스트·이미지 입력과 세션 대화 문맥을 처리하는 Spring AI 웹 애플리케이션입니다.
+              </p>
+              <ul class="compact-list">
+                <li><strong>역할</strong> Spring AI ChatClient 기반 백엔드 구조 설계, 일반 응답·SSE 스트리밍·이미지 질문 API 구현</li>
+                <li><strong>핵심 구현</strong> 세션별 대화 메모리 관리, 멀티모달 입력 처리, WebFlux 기반 실시간 응답 구성</li>
+                <li><strong>결과</strong> 세션 대화 메모리와 멀티모달 입력 처리 구현</li>
+              </ul>
+              <div class="tags" aria-label="Technologies used">
+                <span>Java 21</span><span>Spring Boot</span><span>Spring AI</span><span>OpenAI API</span><span>WebFlux</span>
+              </div>
+              <a class="text-link" href="https://github.com/gyun-jin/boot-openai" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card project-kbo reveal" data-delay="2">
+            <div class="project-card-top">
+              <span class="project-number">04</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="mini-art kbo-art" role="img" aria-label="KBO HTML을 Selenium으로 수집해 MariaDB에 저장하고 REST API로 제공하는 과정">
+              <div class="baseball-mark" aria-hidden="true"><span></span></div>
+              <div class="data-route">
+                <span>KBO HTML</span><b>→</b><span>SELENIUM</span><b>→</b><span>MariaDB</span><b>→</b><span>REST API</span>
+              </div>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-meta"><span>WEB CRAWLING</span><span>BACKEND</span></div>
+              <h3>KBO Crawling</h3>
+              <p class="card-subtitle">경기·상대전적 크롤링과 REST API</p>
+              <p>
+                KBO 일정과 상대전적을 크롤링·정형화해 조회 API로 제공하는 백엔드 프로젝트입니다.
+              </p>
+              <ul class="compact-list">
+                <li><strong>역할</strong> Selenium 크롤러 개발, 일정·상대전적 데이터 모델링, JPA 기반 조회 API 구현</li>
+                <li><strong>핵심 구현</strong> 경기 일정·상대전적 2종 데이터의 수집·정제·MariaDB 적재 흐름과 REST API 구성</li>
+                <li><strong>결과</strong> 수집 데이터를 조회하는 REST API 구현</li>
+              </ul>
+              <div class="tags" aria-label="Technologies used">
+                <span>Java 17</span><span>Spring Boot</span><span>Selenium</span><span>JPA</span><span>MariaDB</span>
+              </div>
+              <a class="text-link" href="https://github.com/gyun-jin/kbo-crawling" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section capabilities" id="capabilities" aria-labelledby="capabilities-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> SKILLS</p>
+          <div>
+            <h2 id="capabilities-title">Skills</h2>
+          </div>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card reveal">
+            <span class="capability-icon">01</span>
+            <h3>Data Analysis</h3>
+            <p>데이터 정제, 피처 엔지니어링, 검증 설계와 확률 보정을 수행합니다.</p>
+            <div class="skill-lines">
+              <span>Python · Pandas · Scikit-learn</span>
+              <span>CatBoost · TabM · Calibration</span>
+              <span>MySQL · MariaDB</span>
+            </div>
+          </article>
+
+          <article class="capability-card reveal" data-delay="1">
+            <span class="capability-icon">02</span>
+            <h3>Applied AI</h3>
+            <p>컴퓨터 비전과 생성형 AI 기능을 연구와 서비스에 적용합니다.</p>
+            <div class="skill-lines">
+              <span>Mediapipe · OpenCV</span>
+              <span>OpenAI API · Spring AI</span>
+              <span>Vision · Chat · Streaming</span>
+            </div>
+          </article>
+
+          <article class="capability-card reveal" data-delay="2">
+            <span class="capability-icon">03</span>
+            <h3>Service Development</h3>
+            <p>분석 결과와 AI 기능을 REST API, 웹과 모바일 서비스로 구현합니다.</p>
+            <div class="skill-lines">
+              <span>Java · Spring Boot · REST</span>
+              <span>Flutter · Dart · Firebase</span>
+              <span>AWS Lambda · GitHub</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section journey" id="journey" aria-labelledby="journey-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> EXPERIENCE</p>
+          <div>
+            <h2 id="journey-title">Experience</h2>
+          </div>
+        </div>
+
+        <div class="journey-layout">
+          <div class="timeline reveal">
+            <article>
+              <time>2026.08 — 09</time>
+              <div>
+                <span class="timeline-type">교육 · 데이터톤</span>
+                <h3>LG Aimers 9기 수료</h3>
+                <p>투구 제구 성공확률 예측 데이터톤 · 391위 / 1,090명</p>
+              </div>
+            </article>
+            <article>
+              <time>2026</time>
+              <div>
+                <span class="timeline-type">연구 발표</span>
+                <h3>한국게임학회 춘계학술발표대회</h3>
+                <p>Mediapipe 기반 사시·사위 판별 및 Vision Therapy 시스템 연구 발표</p>
+              </div>
+            </article>
+            <article>
+              <time>2025.06 — 2026.07</time>
+              <div>
+                <span class="timeline-type">학부 연구</span>
+                <h3>Integrated Media System 학부연구생</h3>
+                <p>컴퓨터 비전 연구와 사용자용 서비스 구현을 연결</p>
+              </div>
+            </article>
+            <article>
+              <time>2025.04 — 2026.03</time>
+              <div>
+                <span class="timeline-type">커뮤니티</span>
+                <h3>GDGoC Core Member</h3>
+                <p>GDGoC 커뮤니티 운영 및 Core Member 활동</p>
+              </div>
+            </article>
+            <article>
+              <time>2025</time>
+              <div>
+                <span class="timeline-type">수상</span>
+                <h3>보조기기 아이디어 공모전 최우수상</h3>
+                <p>경기도재활공학서비스연구지원센터 주최</p>
+              </div>
+            </article>
+            <article>
+              <time>2024.08.08 — 2025.01.28</time>
+              <div>
+                <span class="timeline-type">해외 경험</span>
+                <h3>캐나다 어학연수</h3>
+                <p>캐나다 현지 어학 프로그램 참여</p>
+              </div>
+            </article>
+            <article>
+              <time>2023.06 — 12</time>
+              <div>
+                <span class="timeline-type">학부 연구</span>
+                <h3>Integrated Media System 학부연구생</h3>
+                <p>노동자 출석·심리검사 서비스 및 관리자 화면 프론트엔드 개발</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span></span> CONTACT</p>
+          <h2 id="contact-title">Contact</h2>
+        </div>
+        <div class="contact-links reveal" data-delay="1">
+          <a href="mailto:yoonj6201@gmail.com">
+            <span>Email</span>
+            <strong>yoonj6201@gmail.com</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a href="mailto:dbswls6201030@naver.com">
+            <span>Email</span>
+            <strong>dbswls6201030@naver.com</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a href="https://github.com/gyun-jin" target="_blank" rel="noreferrer">
+            <span>GitHub</span>
+            <strong>github.com/gyun-jin</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <span>© <span id="year"></span> Park YoonJin</span>
+        <span>Designed around data, built with care.</span>
+      </footer>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
