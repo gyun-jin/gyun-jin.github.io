@@ -57,8 +57,4 @@ git push
 
 ## Copyright
 
-현재 저장소는 HTML5 UP 원본 템플릿의 CSS, JavaScript, 폰트 및 이미지 에셋을 포함하지 않는 별도 정적 사이트입니다.
-
-포트폴리오의 코드, 문구 및 개인 이미지에 별도의 오픈소스 라이선스를 부여하지 않았습니다. 별도 허가가 없는 한 무단 복제·재배포를 허용하지 않습니다.
-
 © 2026 Park YoonJin. All rights reserved.
