@@ -1109,7 +1109,7 @@ main {
 
 .capability-card {
   --skill-accent: var(--mint);
-  min-height: 23rem;
+  min-height: 27rem;
   padding: 2.3rem;
   display: flex;
   flex-direction: column;
@@ -1144,7 +1144,7 @@ main {
 .capability-icon {
   align-self: flex-start;
   display: inline-flex;
-  margin-bottom: 2.15rem;
+  margin-bottom: 1.65rem;
   padding: 0.38rem 0.65rem;
   background: rgba(255, 255, 255, 0.84);
   border: 1px solid currentColor;
@@ -1156,35 +1156,60 @@ main {
 }
 
 .capability-card h3 {
-  margin: 0 0 0.7rem;
+  min-height: 4.4rem;
+  margin: 0 0 1.65rem;
   color: var(--ink);
-  font-size: 1.65rem;
+  font-size: clamp(1.35rem, 1.6vw, 1.65rem);
+  line-height: 1.35;
 }
 
-.capability-card > p {
-  margin: 0 0 1.8rem;
-  color: var(--ink-dim);
-  font-size: 0.9rem;
-  word-break: keep-all;
+.skill-group {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
 }
 
-.skill-lines {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.skill-group + .skill-group {
+  margin-top: 1.3rem;
+}
+
+.skill-stack {
   margin-top: auto;
 }
 
-.skill-lines span {
-  display: inline-flex;
-  padding: 0.48rem 0.62rem;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid currentColor;
+.skill-label {
+  margin: 0 0 0.8rem;
   color: var(--skill-accent);
   font-family: "DM Mono", monospace;
-  font-size: 0.63rem;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.62rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-dim);
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
   font-weight: 500;
   line-height: 1.4;
+}
+
+.skill-tags-primary span {
+  background: color-mix(in srgb, var(--skill-accent) 10%, white);
+  border-color: color-mix(in srgb, var(--skill-accent) 38%, transparent);
+  color: var(--ink);
 }
 
 .journey {
@@ -1432,6 +1457,9 @@ footer {
   .project-art { min-height: 25rem; }
   .project-copy { grid-column: 2; padding-left: 0; }
   .project-card { grid-template-columns: minmax(17rem, 0.8fr) minmax(0, 1fr); gap: 1.4rem 2.2rem; }
+  .capability-grid { grid-template-columns: 1fr; }
+  .capability-card { min-height: auto; }
+  .capability-card h3 { min-height: 0; }
   .contact { grid-template-columns: 1fr; min-height: auto; }
 }
 
