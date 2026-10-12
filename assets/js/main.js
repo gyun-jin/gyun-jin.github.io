@@ -2,6 +2,8 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const revealItems = document.querySelectorAll(".reveal");
 const sections = document.querySelectorAll("main > section[id]");
 const navLinks = document.querySelectorAll(".side-nav a");
+const caseOpeners = document.querySelectorAll("[data-case-open]");
+const caseDialogs = document.querySelectorAll(".case-dialog");
 
 if (reduceMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
@@ -36,4 +38,28 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+caseOpeners.forEach((opener) => {
+  opener.addEventListener("click", () => {
+    const dialog = document.querySelector(`#${opener.dataset.caseOpen}`);
+    if (!dialog || typeof dialog.showModal !== "function") return;
+    dialog.showModal();
+    document.body.classList.add("modal-open");
+  });
+});
+
+caseDialogs.forEach((dialog) => {
+  const closeButton = dialog.querySelector("[data-case-close]");
+
+  closeButton?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    if (!document.querySelector(".case-dialog[open]")) {
+      document.body.classList.remove("modal-open");
+    }
+  });
+});
+
 document.querySelector("#year").textContent = new Date().getFullYear();

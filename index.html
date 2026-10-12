@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/main.css?v=9" />
+    <link rel="stylesheet" href="assets/css/main.css?v=13" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
   <body>
@@ -108,31 +108,53 @@
               <span class="project-number">01</span>
               <span class="project-year">2026</span>
             </div>
-            <div class="mini-art art-baseball" role="img" aria-label="시간 순서 분할, CatBoost와 TabM 앙상블, Platt 확률 보정으로 이어지는 투구 제구 성공확률 모델링 과정">
+            <div class="mini-art art-baseball" role="img" aria-label="투구 데이터와 도메인 피처를 CatBoost와 TabM으로 학습하고, 앙상블과 확률 보정을 거쳐 제구 성공확률을 출력하는 모델 파이프라인">
               <div class="chart-grid"></div>
-              <div class="model-pipeline">
-                <div class="pipeline-step">
-                  <small>01 · SPLIT</small>
-                  <strong>Chronological</strong>
-                  <span>과거 시즌 → 미래 시즌</span>
+              <div class="lg-pipeline">
+                <div class="lg-pipeline-title">
+                  <strong>MODEL PIPELINE</strong>
+                  <span>5-SEED · TEMPORAL CV</span>
                 </div>
-                <b aria-hidden="true">↓</b>
-                <div class="pipeline-step pipeline-step-accent">
-                  <small>02 · ENSEMBLE</small>
-                  <strong>CatBoost + TabM</strong>
-                  <span>시즌 일반화 우선</span>
+
+                <div class="lg-stage lg-stage-data">
+                  <div><i>01</i><small>DATA</small></div>
+                  <strong>투구 단위 기록</strong>
+                  <span>train.csv · TrackMan</span>
                 </div>
-                <b aria-hidden="true">↓</b>
-                <div class="pipeline-step">
-                  <small>03 · CALIBRATE</small>
-                  <strong>Platt Scaling</strong>
-                  <span>확률 품질 보정</span>
+                <span class="lg-pipeline-arrow" aria-hidden="true">→</span>
+                <div class="lg-stage lg-stage-feature">
+                  <div><i>02</i><small>FEATURES</small></div>
+                  <strong>도메인 피처</strong>
+                  <span>As-of 통계 · 현재 시즌</span>
                 </div>
-                <b aria-hidden="true">↓</b>
-                <div class="pipeline-output">
+
+                <div class="lg-models">
+                  <div class="lg-model lg-model-cat">
+                    <small>MODEL A · 5 SEEDS</small>
+                    <strong>CatBoost</strong>
+                    <span>팀 내 단일 모델 최고</span>
+                  </div>
+                  <span aria-hidden="true">+</span>
+                  <div class="lg-model lg-model-tabm">
+                    <small>MODEL B · 5 SEEDS</small>
+                    <strong>TabM</strong>
+                    <span>구종·상황별 확률</span>
+                  </div>
+                </div>
+
+                <div class="lg-ensemble">
+                  <small>03 · ENSEMBLE &amp; CALIBRATION</small>
+                  <strong>Logit Stack <span>→</span> Platt Scaling</strong>
+                </div>
+
+                <div class="lg-output">
                   <small>OUTPUT</small>
-                  <strong>제구 성공확률</strong>
+                  <strong>P(제구 성공)</strong>
                   <span>calibrated probability · 0—1</span>
+                </div>
+
+                <div class="lg-checks" aria-hidden="true">
+                  <span>TIME SPLIT</span><span>LEAKAGE FREE</span><span>CALIBRATED</span>
                 </div>
               </div>
             </div>
@@ -142,9 +164,9 @@
               <p class="card-subtitle">투구 제구 성공확률 예측</p>
               <p>과거 시즌 데이터에서 미래 투구의 제구 성공확률을 예측한 데이터톤 프로젝트입니다.</p>
               <ul class="compact-list">
-                <li><strong>역할</strong> 야구 도메인 분석을 바탕으로 중요 피처 개발, CatBoost·TabM 성능 비교와 앙상블 모델 선택</li>
+                <li><strong>역할</strong> 야구 도메인 분석을 바탕으로 중요 피처 개발, CatBoost 단일 모델 개발과 TabM 앙상블 검증</li>
                 <li><strong>핵심 구현</strong> 시즌 기준 시간 분할로 데이터 누수 방지, TabM 가중치 0.05 적용, Platt calibration으로 확률 품질 보정</li>
-                <li><strong>결과</strong> 391위 / 1,090명 · 리더보드 1029.04299점</li>
+                <li><strong>결과</strong> 개발한 CatBoost가 팀 내 단일 모델 최고 점수 기록 · 최종 391위 / 1,090명</li>
               </ul>
               <div class="tags" aria-label="Technologies used">
                 <span>Python</span><span>CatBoost</span><span>TabM</span><span>Feature Engineering</span>
@@ -263,6 +285,99 @@
             </div>
           </article>
         </div>
+
+        <div class="project-case-log reveal" aria-label="Project troubleshooting cases">
+          <p class="eyebrow"><span></span> TROUBLESHOOTING</p>
+          <div class="case-log">
+            <button class="case-log-row case-aws" type="button" data-case-open="case-aws-dialog" aria-haspopup="dialog">
+              <span class="case-log-index">01</span>
+              <span class="case-log-project">AWS Serverless</span>
+              <strong>Spring Boot의 Lambda 실행 구조 전환</strong>
+              <span class="case-log-result">2 Functions · 1 JAR</span>
+              <span class="case-log-open" aria-hidden="true">↗</span>
+            </button>
+            <button class="case-log-row case-seed" type="button" data-case-open="case-seed-dialog" aria-haspopup="dialog">
+              <span class="case-log-index">02</span>
+              <span class="case-log-project">LG Aimers</span>
+              <strong>시드별 예측 확률 편차 안정화</strong>
+              <span class="case-log-result">+14.04점</span>
+              <span class="case-log-open" aria-hidden="true">↗</span>
+            </button>
+            <button class="case-log-row case-season" type="button" data-case-open="case-season-dialog" aria-haspopup="dialog">
+              <span class="case-log-index">03</span>
+              <span class="case-log-project">LG Aimers</span>
+              <strong>현재 시즌 기록을 나타내는 피처 복원</strong>
+              <span class="case-log-result">약 +48.5점</span>
+              <span class="case-log-open" aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <dialog class="case-dialog case-aws" id="case-aws-dialog" aria-labelledby="case-aws-title">
+          <div class="case-dialog-panel">
+            <header>
+              <div>
+                <span class="case-dialog-label">AWS · SERVERLESS</span>
+                <h3 id="case-aws-title">Spring Boot의 Lambda 실행 구조 전환</h3>
+              </div>
+              <button class="case-dialog-close" type="button" data-case-close aria-label="Close case details">×</button>
+            </header>
+            <dl class="case-dialog-steps">
+              <div><dt>Problem</dt><dd>서버 프로세스를 전제로 한 Spring Boot 애플리케이션을 Lambda 요청 방식으로 바로 실행할 수 없었습니다.</dd></div>
+              <div><dt>Cause</dt><dd>Lambda에는 컨트롤러 대신 함수 핸들러가 필요하고, 실행 파일 안에 모든 의존성이 포함되어야 했습니다.</dd></div>
+              <div><dt>Solution</dt><dd>2개 Function Bean으로 API Gateway의 path parameter를 처리하고, AWS Adapter와 Maven Shade Plugin으로 전용 JAR을 구성했습니다.</dd></div>
+            </dl>
+            <footer class="case-dialog-result">
+              <div><span>Result</span><strong>2 Functions · 1 JAR</strong></div>
+              <p>하나의 코드베이스에서 로컬 실행과 Lambda 실행을 지원하는 배포 구조를 완성했습니다.</p>
+              <a href="https://github.com/gyun-jin/boot-serverless-aws" target="_blank" rel="noreferrer">View repository <span aria-hidden="true">↗</span></a>
+            </footer>
+          </div>
+        </dialog>
+
+        <dialog class="case-dialog case-seed" id="case-seed-dialog" aria-labelledby="case-seed-title">
+          <div class="case-dialog-panel">
+            <header>
+              <div>
+                <span class="case-dialog-label">LG AIMERS · MODEL STABILITY</span>
+                <h3 id="case-seed-title">시드별 예측 확률 편차 안정화</h3>
+              </div>
+              <button class="case-dialog-close" type="button" data-case-close aria-label="Close case details">×</button>
+            </header>
+            <dl class="case-dialog-steps">
+              <div><dt>Problem</dt><dd>같은 피처로 학습해도 시드에 따라 예측값이 달라져 단일 모델의 점수가 안정적으로 재현되지 않았습니다.</dd></div>
+              <div><dt>Cause</dt><dd>일부 투구의 성공확률을 실제보다 지나치게 높거나 낮게 예측했고, 이 확률 오차가 누적돼 대회 점수가 낮아졌습니다.</dd></div>
+              <div><dt>Solution</dt><dd>서로 다른 시드 5개의 CatBoost 예측을 평균하고, Platt 보정으로 예측확률과 실제 성공 빈도의 차이를 줄였습니다.</dd></div>
+            </dl>
+            <footer class="case-dialog-result">
+              <div><span>Result</span><strong>1112.84 → 1126.88</strong></div>
+              <p>2022·2023·2024 시즌 검증 평균 기준 대회 환산 점수를 <b>14.04점</b> 개선했습니다.</p>
+              <a href="https://github.com/gyun-jin/LG-Aimers-9th" target="_blank" rel="noreferrer">View experiment <span aria-hidden="true">↗</span></a>
+            </footer>
+          </div>
+        </dialog>
+
+        <dialog class="case-dialog case-season" id="case-season-dialog" aria-labelledby="case-season-title">
+          <div class="case-dialog-panel">
+            <header>
+              <div>
+                <span class="case-dialog-label">LG AIMERS · FEATURE ENGINEERING</span>
+                <h3 id="case-season-title">현재 시즌 기록을 나타내는 피처 복원</h3>
+              </div>
+              <button class="case-dialog-close" type="button" data-case-close aria-label="Close case details">×</button>
+            </header>
+            <dl class="case-dialog-steps">
+              <div><dt>Problem</dt><dd>통산 누적 성공률만으로는 투수의 최근 컨디션과 현재 시즌의 변화를 구분하기 어려웠습니다.</dd></div>
+              <div><dt>Cause</dt><dd>투구 수와 성공률이 시즌 경계에서 초기화되지 않고 여러 시즌에 걸쳐 계속 누적됐습니다.</dd></div>
+              <div><dt>Solution</dt><dd>현재 누적값에서 이전 시즌 종료 값을 빼 현재 시즌 기록을 복원하고, 기본 12개·상황 결합 7개 피처를 추가했습니다.</dd></div>
+            </dl>
+            <footer class="case-dialog-result">
+              <div><span>Result</span><strong>≈1205.6 → ≈1254.1</strong></div>
+              <p>검증 데이터의 평균 성공률 기준 대회 환산 점수를 약 <b>48.5점</b> 개선했습니다.</p>
+              <a href="https://github.com/gyun-jin/LG-Aimers-9th" target="_blank" rel="noreferrer">View experiment <span aria-hidden="true">↗</span></a>
+            </footer>
+          </div>
+        </dialog>
       </section>
 
       <section class="section capabilities" id="capabilities" aria-labelledby="capabilities-title">
@@ -435,6 +550,6 @@
       </footer>
     </main>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2"></script>
   </body>
 </html>

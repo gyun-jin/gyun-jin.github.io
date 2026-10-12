@@ -2,6 +2,8 @@
 
 데이터 분석과 AI 프로젝트를 중심으로 구성한 박윤진의 단일 페이지 포트폴리오입니다. 분석과 모델링에 그치지 않고 결과를 API, 웹, 모바일 서비스로 구현한 경험을 소개합니다.
 
+프로젝트별 역할과 기술 스택뿐 아니라 실제 개발 과정의 문제, 원인, 해결 방법과 정량적 결과를 프로젝트 하단의 Troubleshooting 목록으로 정리했습니다.
+
 ## Live Site
 
 - Portfolio: [https://gyun-jin.github.io](https://gyun-jin.github.io)
